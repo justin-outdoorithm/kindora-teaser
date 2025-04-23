@@ -11,10 +11,10 @@ export default function AboutPage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-teal-50 to-blue-50 py-16 border-b border-gray-100">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gray-900">Our Story</h1>
-              <p className="mt-6 text-xl text-gray-600">
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight sm:text-5xl text-gray-900">Our Story</h1>
+              <p className="mt-6 text-lg md:text-xl text-gray-600">
                 How a passion for social impact and technology led to a mission to transform philanthropy
               </p>
               <div className="mt-8">
@@ -25,14 +25,14 @@ export default function AboutPage() {
         </section>
 
         {/* The Origin Story */}
-        <section className="py-16 bg-white">
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container px-4 sm:px-6">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
                 <div className="inline-block bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-teal-700 mb-4">
                   Our Journey
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Transforming Philanthropy</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Transforming Philanthropy</h2>
                 <p className="text-gray-600 mb-4">
                   Kindora was born from a simple observation that became impossible to ignore: the organizations closest
                   to social problems often have the most effective solutions, yet they're the least likely to secure
@@ -55,10 +55,10 @@ export default function AboutPage() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="Transforming philanthropy through technology"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2023%2C%202025%2C%2001_56_40%20AM-0ILy94rfdpAPCp3BFF6o8S62qhybNr.png"
+                  alt="Transforming philanthropy through equity and community empowerment"
                   width={800}
-                  height={600}
+                  height={800}
                   className="w-full h-auto"
                 />
               </div>
@@ -67,17 +67,17 @@ export default function AboutPage() {
         </section>
 
         {/* Our Values */}
-        <section className="py-16 bg-white">
-          <div className="container">
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <div className="inline-block bg-purple-100 rounded-full px-3 py-1 text-sm font-semibold text-purple-700 mb-4">
                 Our Values
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">What Drives Us</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">What Drives Us</h2>
               <p className="mt-4 text-lg text-gray-600">These core principles guide everything we do at Kindora</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-teal-700" />
@@ -146,21 +146,21 @@ export default function AboutPage() {
         </section>
 
         {/* Our Vision */}
-        <section className="py-16 bg-teal-700 text-white">
-          <div className="container">
+        <section className="py-12 md:py-16 bg-teal-700 text-white">
+          <div className="container px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <div className="inline-block bg-teal-600 rounded-full px-3 py-1 text-sm font-semibold text-white mb-4">
                 Our Vision
               </div>
-              <h2 className="text-3xl font-bold mb-6">A More Equitable Future</h2>
-              <p className="text-xl text-teal-100">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">A More Equitable Future</h2>
+              <p className="text-lg md:text-xl text-teal-100">
                 We envision a world where funding flows to the most effective solutions, regardless of who proposes them
                 or their access to networks of privilege. Where nonprofits spend less time fundraising and more time
                 creating impact. Where philanthropy becomes a true catalyst for community-led change.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
               <div className="bg-teal-800 bg-opacity-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">For Grassroots Organizations</h3>
                 <ul className="space-y-3">
@@ -219,11 +219,11 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-teal-600 to-blue-600 text-white">
-          <div className="container">
+        <section className="py-12 md:py-16 bg-gradient-to-r from-teal-600 to-blue-600 text-white">
+          <div className="container px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Join Us in Our Mission</h2>
-              <p className="text-xl mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Join Us in Our Mission</h2>
+              <p className="text-lg md:text-xl mb-8">
                 When we level the philanthropic playing field through equitable intelligence, everyone wins: community
                 organizations secure sustainable funding, foundations find partners whose work genuinely aligns with
                 their missions, and communities receive more effective, culturally responsive solutions.
@@ -235,7 +235,7 @@ export default function AboutPage() {
       </main>
 
       <footer className="bg-gray-900 text-white py-8">
-        <div className="container">
+        <div className="container px-4 sm:px-6">
           <div className="text-center">
             <p>© 2023 Kindora. All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-400">Democratizing access to philanthropic funding through AI.</p>

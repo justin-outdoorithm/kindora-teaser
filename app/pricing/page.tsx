@@ -22,9 +22,9 @@ export default function PricingPage() {
 
       <main className="flex-1">
         <section className="bg-white py-12 border-b border-gray-100">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900">Pricing Plans</h1>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">Pricing Plans</h1>
               <p className="mt-4 text-lg text-gray-600">
                 Choose the plan that's right for your nonprofit organization.
               </p>
@@ -324,7 +324,7 @@ export default function PricingPage() {
 
         {/* CTA Section - Simple */}
         <section className="bg-gray-50 py-12 border-t border-gray-100">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">Ready to experience the platform?</h2>
               <p className="mt-3 text-gray-600">
@@ -341,7 +341,7 @@ export default function PricingPage() {
       </main>
 
       <footer className="bg-white py-8 border-t border-gray-200">
-        <div className="container">
+        <div className="container px-4 sm:px-6">
           <div className="text-center">
             <p className="text-gray-600">© 2023 Kindora. All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-500">This is a demo version for client feedback purposes.</p>

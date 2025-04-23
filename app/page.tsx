@@ -57,13 +57,13 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* Hero Section - Simplified */}
-        <section className="bg-white py-12 sm:py-16 border-b border-gray-100">
-          <div className="container">
+        <section className="bg-white py-8 sm:py-12 md:py-16 border-b border-gray-100">
+          <div className="container px-4 sm:px-6">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
                 <h1>
                   <span className="block text-base font-semibold text-orange-500">Kindora</span>
-                  <span className="mt-1 block text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
+                  <span className="mt-1 block text-3xl sm:text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
                     <span className="block text-gray-900">Modern</span>
                     <span className="block text-teal-700">Fundraising Tools</span>
                   </span>
@@ -102,19 +102,19 @@ export default function LandingPage() {
         </section>
 
         {/* Our Mission Section (from About Us) */}
-        <section className="py-16 bg-gradient-to-r from-teal-50 to-blue-50">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="py-12 md:py-16 bg-gradient-to-r from-teal-50 to-blue-50">
+          <div className="container px-4 sm:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
               <div className="inline-block bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-teal-700 mb-4">
                 Our Mission
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Transforming Philanthropy</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Transforming Philanthropy</h2>
               <p className="mt-4 text-lg text-gray-600">
                 Kindora creates "equitable intelligence" that serves two critical purposes:
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-teal-700" />
@@ -143,20 +143,22 @@ export default function LandingPage() {
         </section>
 
         {/* The Challenge Section (from About Us) */}
-        <section className="py-16 bg-white">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container px-4 sm:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
               <div className="inline-block bg-orange-100 rounded-full px-3 py-1 text-sm font-semibold text-orange-700 mb-4">
                 The Challenge
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">The Philanthropic Funding Landscape is Broken</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                The Philanthropic Funding Landscape is Broken
+              </h2>
               <p className="mt-4 text-lg text-gray-600">
                 Organizations closest to social problems often have the most effective solutions, yet they're the least
                 likely to secure consistent funding.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
                   <Search className="h-6 w-6 text-red-700" />
@@ -194,10 +196,12 @@ export default function LandingPage() {
         </section>
 
         {/* Platform Features - Consolidated Section */}
-        <section className="bg-white py-16">
-          <div className="container">
+        <section className="bg-white py-12 md:py-16">
+          <div className="container px-4 sm:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Democratizing Access to Funding</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
+                Democratizing Access to Funding
+              </h2>
               <p className="mt-4 text-lg text-gray-600">
                 Kindora leverages advanced technology and human-centered design to level the playing field in the social
                 sector, providing equitable intelligence once limited to insiders.
@@ -205,7 +209,7 @@ export default function LandingPage() {
             </div>
 
             {/* Org Profile Feature */}
-            <div className="mt-16 grid md:grid-cols-2 gap-12 items-center">
+            <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="order-2 md:order-1">
                 <div className="inline-block bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-teal-700 mb-4">
                   Organization Profile
@@ -269,7 +273,7 @@ export default function LandingPage() {
 
                   <div className="mb-6">
                     <h4 className="font-medium text-gray-700 mb-3">Funding Focus Areas</h4>
-                    <div className="flex space-x-2">
+                    <div className="flex flex-wrap gap-2">
                       <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm">Education</span>
                       <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
                         Youth Development
@@ -321,7 +325,7 @@ export default function LandingPage() {
             </div>
 
             {/* Intelligent Funder Matching Feature */}
-            <div className="mt-24 grid md:grid-cols-2 gap-12 items-center">
+            <div className="mt-16 md:mt-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="rounded-lg overflow-hidden shadow-md border border-gray-200">
                 {/* Intelligent Funder Matching Screenshot Mockup */}
                 <div className="bg-white p-6">
@@ -342,7 +346,7 @@ export default function LandingPage() {
                       <h4 className="font-medium text-gray-700">Match Quality</h4>
                       <div className="text-sm text-gray-500">128 matches found</div>
                     </div>
-                    <div className="flex space-x-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       <button className="px-3 py-1 bg-teal-600 text-white rounded-md text-sm">All</button>
                       <button className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">High (42)</button>
                       <button className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">Medium (56)</button>
@@ -362,12 +366,16 @@ export default function LandingPage() {
                           95% Match
                         </div>
                       </div>
-                      <div className="mt-3 flex items-center text-sm text-gray-500">
-                        <Building className="h-4 w-4 mr-1" />
-                        <span>San Francisco, CA</span>
-                        <span className="mx-2">•</span>
-                        <Calendar className="h-4 w-4 mr-1" />
-                        <span>Deadline: Aug 15, 2023</span>
+                      <div className="mt-3 flex flex-wrap items-center text-sm text-gray-500 gap-2">
+                        <div className="flex items-center">
+                          <Building className="h-4 w-4 mr-1" />
+                          <span>San Francisco, CA</span>
+                        </div>
+                        <span className="hidden sm:inline">•</span>
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          <span>Deadline: Aug 15, 2023</span>
+                        </div>
                       </div>
                       <div className="mt-3 text-sm text-gray-600">
                         Strong alignment with your youth education programs and community engagement initiatives.
@@ -385,12 +393,16 @@ export default function LandingPage() {
                           92% Match
                         </div>
                       </div>
-                      <div className="mt-3 flex items-center text-sm text-gray-500">
-                        <Building className="h-4 w-4 mr-1" />
-                        <span>Chicago, IL</span>
-                        <span className="mx-2">•</span>
-                        <Calendar className="h-4 w-4 mr-1" />
-                        <span>Deadline: Sep 30, 2023</span>
+                      <div className="mt-3 flex flex-wrap items-center text-sm text-gray-500 gap-2">
+                        <div className="flex items-center">
+                          <Building className="h-4 w-4 mr-1" />
+                          <span>Chicago, IL</span>
+                        </div>
+                        <span className="hidden sm:inline">•</span>
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          <span>Deadline: Sep 30, 2023</span>
+                        </div>
                       </div>
                       <div className="mt-3 text-sm text-gray-600">
                         Recently shifted focus to innovative education models like yours. New priority area in 2023.
@@ -408,12 +420,16 @@ export default function LandingPage() {
                           88% Match
                         </div>
                       </div>
-                      <div className="mt-3 flex items-center text-sm text-gray-500">
-                        <Building className="h-4 w-4 mr-1" />
-                        <span>Portland, OR</span>
-                        <span className="mx-2">•</span>
-                        <Calendar className="h-4 w-4 mr-1" />
-                        <span>Deadline: Oct 15, 2023</span>
+                      <div className="mt-3 flex flex-wrap items-center text-sm text-gray-500 gap-2">
+                        <div className="flex items-center">
+                          <Building className="h-4 w-4 mr-1" />
+                          <span>Portland, OR</span>
+                        </div>
+                        <span className="hidden sm:inline">•</span>
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          <span>Deadline: Oct 15, 2023</span>
+                        </div>
                       </div>
                       <div className="mt-3 text-sm text-gray-600">
                         Values your community-centered approach and has funded similar organizations in the past.
@@ -450,7 +466,7 @@ export default function LandingPage() {
             </div>
 
             {/* Personalized Reachouts Feature */}
-            <div className="mt-24 grid md:grid-cols-2 gap-12 items-center">
+            <div className="mt-16 md:mt-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="order-2 md:order-1">
                 <div className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mb-4">
                   Personalized Reachouts
@@ -508,7 +524,7 @@ export default function LandingPage() {
                           connecting diverse communities with cultural experiences matches their priorities.
                         </p>
                       </div>
-                      <button className="flex items-center text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200">
+                      <button className="flex-shrink-0 flex items-center text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200 mt-1 ml-2">
                         <Copy className="h-3 w-3 mr-1" />
                         Copy
                       </button>
@@ -584,7 +600,7 @@ export default function LandingPage() {
 
         {/* Demo Request CTA */}
         <section className="bg-gray-50 py-12 border-t border-gray-100">
-          <div className="container">
+          <div className="container px-4 sm:px-6">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">Ready to try the platform?</h2>
               <p className="mt-3 text-lg text-gray-600">
@@ -602,7 +618,7 @@ export default function LandingPage() {
       </main>
 
       <footer className="bg-white py-8 border-t border-gray-200">
-        <div className="container">
+        <div className="container px-4 sm:px-6">
           <div className="text-center">
             <p className="text-gray-600">© 2023 Kindora. All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-500">This is a demo version for client feedback purposes.</p>
