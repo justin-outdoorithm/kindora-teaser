@@ -119,18 +119,10 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
           <Link
             href="/saved-funders"
             className={`whitespace-nowrap px-3 py-1 mr-3 rounded-full text-sm font-medium ${
-              activeTab === "Saved" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
+              activeTab === "Packages" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
             }`}
           >
-            Saved
-          </Link>
-          <Link
-            href="/ai-writing-assistant"
-            className={`whitespace-nowrap px-3 py-1 mr-3 rounded-full text-sm font-medium ${
-              activeTab === "AI Writing" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            AI Writing
+            Packages
           </Link>
           <Link
             href="/grant-builder"
@@ -139,14 +131,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
             }`}
           >
             Grant Builder
-          </Link>
-          <Link
-            href="/order"
-            className={`whitespace-nowrap px-3 py-1 mr-3 rounded-full text-sm font-medium ${
-              activeTab === "Order" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            Order
           </Link>
         </div>
 
@@ -190,7 +174,7 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                     pathname === "/fundraising-dna" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
                   }`}
                 >
-                  Fundraising DNA
+                  Org Profile
                 </Link>
                 <Link
                   href="/funder-matches"
@@ -206,17 +190,7 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                     pathname === "/saved-funders" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
                   }`}
                 >
-                  Saved Funders
-                </Link>
-                <Link
-                  href="/ai-writing-assistant"
-                  className={`flex items-center px-3 py-2 rounded-md font-medium text-sm ${
-                    pathname === "/ai-writing-assistant"
-                      ? "text-teal-700 bg-teal-50"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  AI Writing Assistant
+                  Funder Packages
                 </Link>
                 <Link
                   href="/grant-builder"
@@ -226,23 +200,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                 >
                   Grant Builder
                 </Link>
-                <Link
-                  href="/order"
-                  className={`flex items-center px-3 py-2 rounded-md font-medium text-sm ${
-                    pathname === "/order" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  Order
-                </Link>
-                <Link
-                  href="/my-account"
-                  className={`flex items-center px-3 py-2 rounded-md font-medium text-sm ${
-                    pathname.startsWith("/my-account") ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  My Account
-                </Link>
-
                 <div className="text-xs font-semibold text-gray-500 mt-6 mb-2">HELP & SUPPORT</div>
                 <Link
                   href="#"
@@ -291,7 +248,7 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                 pathname === "/fundraising-dna" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
               }`}
             >
-              Fundraising DNA
+              Org Profile
             </Link>
             <Link
               href="/funder-matches"
@@ -307,15 +264,7 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                 pathname === "/saved-funders" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
               }`}
             >
-              Saved Funders
-            </Link>
-            <Link
-              href="/ai-writing-assistant"
-              className={`flex items-center px-4 py-2 rounded-md font-medium mt-1 ${
-                pathname === "/ai-writing-assistant" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              AI Writing Assistant
+              Funder Packages
             </Link>
             <Link
               href="/grant-builder"
@@ -324,22 +273,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
               }`}
             >
               Grant Builder
-            </Link>
-            <Link
-              href="/order"
-              className={`flex items-center px-4 py-2 rounded-md font-medium mt-1 ${
-                pathname === "/order" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              Order
-            </Link>
-            <Link
-              href="/my-account"
-              className={`flex items-center px-4 py-2 rounded-md font-medium mt-1 ${
-                pathname.startsWith("/my-account") ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              My Account
             </Link>
             <div className="mt-auto pt-4 border-t border-gray-200 mx-2 mt-4">
               <LogoutButton />
@@ -376,22 +309,12 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                 <Link
                   href="/saved-funders"
                   className={`pb-3 font-medium ${
-                    activeTab === "Saved"
+                    activeTab === "Packages"
                       ? "border-b-2 border-teal-700 text-teal-700"
                       : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
-                  Saved
-                </Link>
-                <Link
-                  href="/ai-writing-assistant"
-                  className={`pb-3 font-medium ${
-                    activeTab === "AI Writing"
-                      ? "border-b-2 border-teal-700 text-teal-700"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  AI Writing Assistant
+                  Funder Packages
                 </Link>
                 <Link
                   href="/grant-builder"
@@ -402,16 +325,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                   }`}
                 >
                   Grant Builder
-                </Link>
-                <Link
-                  href="/order"
-                  className={`pb-3 font-medium ${
-                    activeTab === "Order"
-                      ? "border-b-2 border-teal-700 text-teal-700"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  Order
                 </Link>
                 <div className="text-xs px-2 py-1 bg-orange-100 text-orange-600 rounded-full uppercase font-medium">
                   Alpha Preview

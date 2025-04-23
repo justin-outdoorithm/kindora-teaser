@@ -39,7 +39,7 @@ export default function Dashboard() {
             <Link href="/fundraising-dna">
               <Button variant="outline" className="border-teal-700 text-teal-700 hover:bg-teal-50">
                 <FileTextIcon className="h-4 w-4 mr-2" />
-                View DNA Profile
+                View Org Profile
               </Button>
             </Link>
             <Link href="/funder-matches">
@@ -71,10 +71,10 @@ export default function Dashboard() {
                   <FileTextIcon className="h-6 w-6 text-teal-700" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900">Complete Your Fundraising DNA Profile</h3>
+                  <h3 className="font-bold text-gray-900">Complete Your Organization Profile</h3>
                   <p className="text-gray-700 mt-1">
-                    Your profile is 75% complete. Finish setting up your Fundraising DNA to get more accurate funder
-                    matches and increase your success rate.
+                    Your profile is 75% complete. Finish setting up your organization profile to get more accurate
+                    funder matches and increase your success rate.
                   </p>
                   <div className="mt-3 flex flex-wrap gap-3">
                     <Link href="/fundraising-dna">
@@ -101,7 +101,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <Card>
             <CardHeader className="pb-2">
-              <CardDescription>DNA Score</CardDescription>
+              <CardDescription>Profile Score</CardDescription>
               <CardTitle className="text-3xl text-teal-700">85</CardTitle>
             </CardHeader>
             <CardContent>
@@ -169,7 +169,7 @@ export default function Dashboard() {
                   {[
                     {
                       icon: <FileTextIcon className="h-5 w-5 text-blue-500" />,
-                      title: "Fundraising DNA updated",
+                      title: "Organization profile updated",
                       time: "Today, 10:30 AM",
                       description: "Your organization profile was updated with new information.",
                     },
@@ -325,7 +325,7 @@ export default function Dashboard() {
                       <FileTextIcon className="h-5 w-5 text-teal-700" />
                     </div>
                     <div>
-                      <div className="font-medium">View Fundraising DNA</div>
+                      <div className="font-medium">View Org Profile</div>
                       <div className="text-xs text-gray-500">Check your organization's profile</div>
                     </div>
                   </div>
@@ -349,20 +349,20 @@ export default function Dashboard() {
                       <Star className="h-5 w-5 text-teal-700" />
                     </div>
                     <div>
-                      <div className="font-medium">Saved Funders</div>
-                      <div className="text-xs text-gray-500">View and manage your saved funders</div>
+                      <div className="font-medium">Funder Packages</div>
+                      <div className="text-xs text-gray-500">View and manage your funder packages</div>
                     </div>
                   </div>
                 </Link>
 
-                <Link href="/ai-writing-assistant" className="w-full">
+                <Link href="/grant-builder" className="w-full">
                   <div className="bg-white rounded-lg border border-gray-200 hover:border-teal-700 transition-colors p-4 flex items-center">
                     <div className="bg-teal-50 rounded-full p-2 mr-3">
                       <FileTextIcon className="h-5 w-5 text-teal-700" />
                     </div>
                     <div>
-                      <div className="font-medium">Create Grant Application</div>
-                      <div className="text-xs text-gray-500">Use AI to write your application</div>
+                      <div className="font-medium">Grant Builder</div>
+                      <div className="text-xs text-gray-500">Create and edit grant applications</div>
                     </div>
                   </div>
                 </Link>
@@ -406,15 +406,15 @@ export default function Dashboard() {
               </CardFooter>
             </Card>
 
-            {/* Subscription Status */}
+            {/* Package Usage */}
             <Card>
               <CardHeader>
-                <CardTitle>Subscription Status</CardTitle>
+                <CardTitle>Package Usage</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="bg-teal-50 rounded-lg p-3 mb-4">
                   <div className="font-medium text-teal-700">Professional Plan</div>
-                  <div className="text-sm text-gray-700">$299/month, billed monthly</div>
+                  <div className="text-sm text-gray-700">$399/month, billed monthly</div>
                 </div>
 
                 <div className="space-y-3">
@@ -428,14 +428,6 @@ export default function Dashboard() {
 
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span>User Seats</span>
-                      <span className="font-medium">2 / 3</span>
-                    </div>
-                    <Progress value={66} className="h-2" />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between text-sm mb-1">
                       <span>Next Billing Date</span>
                       <span className="font-medium">May 1, 2023</span>
                     </div>
@@ -443,11 +435,9 @@ export default function Dashboard() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Link href="/my-account/subscription" className="w-full">
-                  <Button variant="outline" className="w-full">
-                    Manage Subscription
-                  </Button>
-                </Link>
+                <Button variant="outline" className="w-full">
+                  Upgrade Plan
+                </Button>
               </CardFooter>
             </Card>
           </div>

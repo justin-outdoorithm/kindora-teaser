@@ -464,11 +464,11 @@ export default function SavedFundersPage() {
     : null
 
   return (
-    <DashboardLayout activeTab="Saved">
+    <DashboardLayout activeTab="Packages">
       <div className="p-6">
         <div className="flex justify-between items-center mb-6">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Saved Funders</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Funder Packages</h1>
             <p className="text-gray-600">{filteredFunders.length} funders saved for future reference</p>
           </div>
           <div className="flex space-x-3">
@@ -982,6 +982,21 @@ export default function SavedFundersPage() {
                             <Trash2 className="h-4 w-4" />
                           </button>
                         </div>
+                        {funder.packageData && (
+                          <div className="mt-2">
+                            <Button
+                              size="sm"
+                              className="w-full bg-teal-700 hover:bg-teal-800 text-xs"
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleViewPackage(funder.id)
+                              }}
+                            >
+                              <FileText className="h-3.5 w-3.5 mr-1" />
+                              View Package
+                            </Button>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ))}
