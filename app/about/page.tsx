@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { SiteHeader } from "@/app/components/site-header"
 import { BetaSignup } from "@/app/components/beta-signup"
-import { ArrowRight, Brain, Check, Clock, FileText, Lightbulb, Search, Shield, Target, Users } from "lucide-react"
+import { ArrowRight, Check, Heart, Target, Users } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -13,12 +13,9 @@ export default function AboutPage() {
         <section className="bg-gradient-to-r from-teal-50 to-blue-50 py-16 border-b border-gray-100">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gray-900">
-                Democratizing Philanthropic Access Through AI
-              </h1>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gray-900">Our Story</h1>
               <p className="mt-6 text-xl text-gray-600">
-                We're transforming how funding flows in the social impact sector by creating equitable intelligence that
-                levels the playing field for all nonprofits.
+                How a passion for social impact and technology led to a mission to transform philanthropy
               </p>
               <div className="mt-8">
                 <BetaSignup buttonText="Join Our Mission" />
@@ -27,63 +24,39 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* The Mission */}
+        {/* The Origin Story */}
         <section className="py-16 bg-white">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-block bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-teal-700 mb-4">
-                  Our Mission
+                  Our Journey
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Transforming Philanthropy</h2>
                 <p className="text-gray-600 mb-4">
-                  After directing over half a billion dollars at Google.org and serving as Program Committee Chair at
-                  the San Francisco Foundation, I've witnessed a fundamental truth: organizations closest to social
-                  problems often have the most effective solutions, yet they're the least likely to secure consistent
-                  funding.
+                  Kindora was born from a simple observation that became impossible to ignore: the organizations closest
+                  to social problems often have the most effective solutions, yet they're the least likely to secure
+                  consistent funding.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  This disparity exists because philanthropy operates through unwritten rules, implicit relationships,
-                  and insider knowledge that systematically advantages established players. Meanwhile, even
-                  well-resourced nonprofits waste countless hours and resources navigating an inefficient
-                  system—development professionals spend up to 60% of their time on research tasks that AI could handle
-                  in minutes.
+                  We witnessed this firsthand. After directing over half a billion dollars in philanthropy and serving
+                  on foundation boards, we saw how funding decisions were made behind closed doors. The system clearly
+                  favored those with connections and resources to navigate the complex, unwritten rules of philanthropy.
                 </p>
-                <p className="text-gray-700 font-medium">
-                  Proxi creates "equitable intelligence" that serves two critical purposes:
+                <p className="text-gray-600 mb-4">
+                  Meanwhile, brilliant community-led organizations were struggling to get noticed, despite their
+                  incredible impact. Something had to change.
                 </p>
-                <ul className="mt-4 space-y-3">
-                  <li className="flex items-start">
-                    <div className="bg-teal-100 rounded-full p-1 mr-3 mt-1">
-                      <Check className="h-4 w-4 text-teal-700" />
-                    </div>
-                    <span className="text-gray-600">
-                      <span className="font-medium text-gray-900">Democratizing access</span> by bringing program
-                      officer-level discernment to organizations that have never had it before, particularly those led
-                      by and serving disadvantaged communities
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-teal-100 rounded-full p-1 mr-3 mt-1">
-                      <Check className="h-4 w-4 text-teal-700" />
-                    </div>
-                    <span className="text-gray-600">
-                      <span className="font-medium text-gray-900">Maximizing efficiency</span> by automating the
-                      time-consuming research and writing processes that burden fundraising professionals across the
-                      sector
-                    </span>
-                  </li>
-                </ul>
-                <p className="mt-6 text-gray-600">
-                  By addressing both equity and efficiency challenges, Proxi enables a fundamental shift in how social
-                  impact is funded—creating a more level playing field while freeing human talent to focus on what
-                  matters most: building relationships and delivering impact.
+                <p className="text-gray-600">
+                  That's when the idea for Kindora sparked – what if we could use AI to democratize access to the
+                  insider knowledge that makes fundraising successful? What if we could level the playing field while
+                  making the entire process more efficient for everyone?
                 </p>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/placeholder.svg?height=600&width=800"
-                  alt="Proxi mission visualization"
+                  alt="Transforming philanthropy through technology"
                   width={800}
                   height={600}
                   className="w-full h-auto"
@@ -93,184 +66,78 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* The Problem */}
-        <section className="py-16 bg-gray-50">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-block bg-orange-100 rounded-full px-3 py-1 text-sm font-semibold text-orange-700 mb-4">
-                The Challenge
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">The Philanthropic Funding Landscape is Broken</h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  <Search className="h-6 w-6 text-red-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Overwhelming and Inefficient</h3>
-                <p className="text-gray-600">
-                  Current grant prospecting tools generate hundreds or thousands of potential matches without meaningful
-                  prioritization. My first search returned 2,400 funders—an impossible list to navigate effectively.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-red-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Systematically Inequitable</h3>
-                <p className="text-gray-600">
-                  Organizations led by people of color receive less than 4% of philanthropic dollars despite serving
-                  communities with the greatest needs.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  <Brain className="h-6 w-6 text-red-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Lacking Intelligence</h3>
-                <p className="text-gray-600">
-                  Existing platforms provide data without context or strategy, forcing nonprofits to spend precious time
-                  deciphering funder priorities and preferences.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-red-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Resource-Intensive Process</h3>
-                <p className="text-gray-600">
-                  Fundraising professionals at established organizations spend an average of 15-20 hours researching
-                  each potential funder and crafting customized materials—time that could be better spent building
-                  relationships.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-red-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Skilled Talent Wasted</h3>
-                <p className="text-gray-600">
-                  Development staff spend up to 60% of their time in spreadsheets and 990 tax forms trying to assess
-                  fit, rather than leveraging their interpersonal skills for donor cultivation.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
-                  <Lightbulb className="h-6 w-6 text-teal-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">The Solution: Proxi</h3>
-                <p className="text-gray-600">
-                  Our AI-powered platform creates equitable intelligence that democratizes access to funding while
-                  maximizing efficiency for all nonprofits.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* The Technology */}
+        {/* Our Values */}
         <section className="py-16 bg-white">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mb-4">
-                The Technology
+              <div className="inline-block bg-purple-100 rounded-full px-3 py-1 text-sm font-semibold text-purple-700 mb-4">
+                Our Values
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Equitable Intelligence</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Proxi simulates the discernment of experienced grant officers through three core capabilities:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900">What Drives Us</h2>
+              <p className="mt-4 text-lg text-gray-600">These core principles guide everything we do at Kindora</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-blue-700" />
+                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-teal-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Deep Intelligence Gathering</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Equity</h3>
                 <p className="text-gray-600 mb-4">
-                  Our AI analyzes multiple data streams to create dynamic portraits of funders' actual interests:
+                  We believe that funding should flow to the most effective solutions, regardless of who proposes them.
+                  Our platform is designed to level the playing field and create more equitable access to philanthropic
+                  resources.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">Form 990 tax returns (including PDF attachments)</span>
+                    <span className="text-gray-600">Prioritizing diverse perspectives and approaches</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">Annual reports and strategic documents</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">Website content analysis for real-time insights</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">News coverage and leadership statements</span>
+                    <span className="text-gray-600">Removing barriers to access for underrepresented groups</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-blue-700" />
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                  <Target className="h-6 w-6 text-orange-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">AI-Powered Personification</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Impact</h3>
                 <p className="text-gray-600 mb-4">
-                  Rather than static data points, we create dynamic AI funder "personas" that adopt the perspective of
-                  each funder's Program Officer and assess:
+                  We're obsessed with creating real-world impact. Every feature we build is designed to help nonprofits
+                  secure more funding more efficiently, so they can focus on their mission rather than fundraising.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">
-                      Value Alignment: Finding philosophical connections between missions
-                    </span>
+                    <span className="text-gray-600">Measuring success by nonprofit outcomes</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">
-                      Programmatic Fit: Matching approaches with historical giving patterns
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">
-                      Strategic Priority Mapping: Uncovering intersections with emerging focus areas
-                    </span>
+                    <span className="text-gray-600">Continuously improving based on real-world results</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Target className="h-6 w-6 text-blue-700" />
+                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                  <Heart className="h-6 w-6 text-red-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Actionable Intelligence</h3>
-                <p className="text-gray-600 mb-4">Proxi transforms insights into immediate action, generating:</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Community</h3>
+                <p className="text-gray-600 mb-4">
+                  We believe in the power of community-led solutions. Our platform is built to amplify the voices and
+                  work of those closest to the challenges they're addressing.
+                </p>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">Customized outreach emails that consistently secure meetings</span>
+                    <span className="text-gray-600">Centering community expertise and lived experience</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">Letters of Intent that speak directly to funder interests</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">
-                      Strategic briefs that position organizations for funding success
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-600">Meeting guides that frame conversations for maximum impact</span>
+                    <span className="text-gray-600">Building tools that strengthen community connections</span>
                   </li>
                 </ul>
               </div>
@@ -278,19 +145,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Early Results */}
+        {/* Our Vision */}
         <section className="py-16 bg-teal-700 text-white">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <div className="inline-block bg-teal-600 rounded-full px-3 py-1 text-sm font-semibold text-white mb-4">
-                Success Stories
+                Our Vision
               </div>
-              <h2 className="text-3xl font-bold mb-6">Early Results</h2>
+              <h2 className="text-3xl font-bold mb-6">A More Equitable Future</h2>
               <p className="text-xl text-teal-100">
-                Proxi is already changing outcomes. For my nonprofit startup, Outdoorithm Collective, the platform
-                filtered 2,400 potential funders to just 128 strong matches. Within two weeks, we secured meetings with
-                five foundations we never would have found. Three conversations have advanced to the proposal
-                stage—worlds apart from previous attempts.
+                We envision a world where funding flows to the most effective solutions, regardless of who proposes them
+                or their access to networks of privilege. Where nonprofits spend less time fundraising and more time
+                creating impact. Where philanthropy becomes a true catalyst for community-led change.
               </p>
             </div>
 
@@ -301,69 +167,49 @@ export default function AboutPage() {
                   <li className="flex items-start">
                     <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
                     <span className="text-teal-100">
-                      From being systematically excluded to gaining equal access to funding opportunities
+                      Equal access to funding opportunities previously reserved for well-connected organizations
                     </span>
                   </li>
                   <li className="flex items-start">
                     <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
                     <span className="text-teal-100">
-                      From lacking insider knowledge to leveraging AI-driven insights into funder preferences
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-teal-100">
-                      From missing opportunities to discovering perfectly aligned funders they never knew existed
+                      Tools that amplify their unique strengths and community connections
                     </span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-teal-800 bg-opacity-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">For Established Nonprofits</h3>
+                <h3 className="text-xl font-bold mb-4">For Funders</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
                     <span className="text-teal-100">
-                      From spending 15-20 hours researching each potential funder to receiving instant, AI-validated
-                      matches
+                      Discover high-impact organizations that might otherwise fly under the radar
                     </span>
                   </li>
                   <li className="flex items-start">
                     <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
                     <span className="text-teal-100">
-                      From development staff buried in spreadsheets to fundraisers focused on relationship-building
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-teal-100">
-                      From generic proposals to perfectly tailored materials that speak each funder's language
+                      Make more informed decisions based on comprehensive data and insights
                     </span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-teal-800 bg-opacity-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">For Fundraising Professionals</h3>
+                <h3 className="text-xl font-bold mb-4">For Communities</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
                     <span className="text-teal-100">
-                      From tedious manual review of 990s and annual reports to automated intelligence gathering
+                      More resources flowing to organizations that truly understand local needs
                     </span>
                   </li>
                   <li className="flex items-start">
                     <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
                     <span className="text-teal-100">
-                      From spending 60% of time on research and writing to investing that time in high-value donor
-                      meetings
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-teal-100">
-                      From low conversion rates to significantly higher success with precisely targeted outreach
+                      Better solutions developed by those with lived experience and cultural context
                     </span>
                   </li>
                 </ul>
@@ -372,228 +218,17 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Business Opportunity */}
-        <section className="py-16 bg-white">
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-block bg-purple-100 rounded-full px-3 py-1 text-sm font-semibold text-purple-700 mb-4">
-                  The Opportunity
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">The Business Opportunity</h2>
-                <p className="text-gray-600 mb-4">
-                  Our initial focus is the philanthropic sector, which distributes over $800 billion annually to 1.5
-                  million nonprofits in the U.S. alone. But Proxi's intelligent matching and strategic guidance
-                  capabilities extend far beyond:
-                </p>
-
-                <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">Initial Market</h3>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-purple-600 mt-0.5" />
-                    <span className="text-gray-600">Nonprofits seeking grant funding</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-purple-600 mt-0.5" />
-                    <span className="text-gray-600">Nonprofit fundraising consultants and firms</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-purple-600 mt-0.5" />
-                    <span className="text-gray-600">Philanthropy advisors guiding foundation strategy</span>
-                  </li>
-                </ul>
-
-                <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">Expansion Opportunities</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-purple-600 mt-0.5" />
-                    <span className="text-gray-600">
-                      Community Investment Capital: Connecting social enterprises with community development financial
-                      institutions
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-purple-600 mt-0.5" />
-                    <span className="text-gray-600">
-                      Impact Investing: Matching impact-focused ventures with aligned investors
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-purple-600 mt-0.5" />
-                    <span className="text-gray-600">
-                      ESG-Aligned Corporate Philanthropy: Helping corporations identify partners that advance their
-                      sustainability goals
-                    </span>
-                  </li>
-                </ul>
-
-                <p className="mt-6 text-gray-600">
-                  This expansion addresses an additional $80 billion annual market while maintaining our core mission of
-                  democratizing access to capital.
-                </p>
-              </div>
-
-              <div>
-                <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Revenue Model</h3>
-                  <p className="text-gray-600 mb-6">
-                    We're implementing a tiered pricing approach that ensures accessibility while driving strong
-                    business growth:
-                  </p>
-
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-teal-500 pl-4 py-2">
-                      <h4 className="font-bold text-gray-900">Community Builder</h4>
-                      <p className="text-gray-600">$25–$50/month (organizations under $250K budget)</p>
-                    </div>
-
-                    <div className="border-l-4 border-blue-500 pl-4 py-2">
-                      <h4 className="font-bold text-gray-900">Growth Tier</h4>
-                      <p className="text-gray-600">$75–$150/month (organizations with $250K–$2M budgets)</p>
-                    </div>
-
-                    <div className="border-l-4 border-purple-500 pl-4 py-2">
-                      <h4 className="font-bold text-gray-900">Impact Tier</h4>
-                      <p className="text-gray-600">$200–$300/month (larger organizations and consultancies)</p>
-                    </div>
-                  </div>
-
-                  <p className="mt-6 text-gray-600">
-                    This model allows us to offer discounted rates to grassroots organizations while maintaining premium
-                    pricing for larger entities and consultancies—ensuring both mission alignment and robust revenue
-                    potential of $15–30 million at scale.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Roadmap */}
-        <section className="py-16 bg-gray-50">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-block bg-indigo-100 rounded-full px-3 py-1 text-sm font-semibold text-indigo-700 mb-4">
-                Looking Forward
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">Our Roadmap</h2>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="relative">
-                {/* Timeline line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-200"></div>
-
-                {/* Phase 1 */}
-                <div className="relative mb-16">
-                  <div className="flex items-center justify-center">
-                    <div className="z-10 flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-full">
-                      <span className="text-white font-bold">1</span>
-                    </div>
-                  </div>
-                  <div className="mt-4 bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Phase 1: Proof of Concept (Current)</h3>
-                    <p className="text-gray-600">
-                      Working with 10 diverse community organizations to document time saved, meetings secured, and
-                      grants won.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phase 2 */}
-                <div className="relative mb-16">
-                  <div className="flex items-center justify-center">
-                    <div className="z-10 flex items-center justify-center w-12 h-12 bg-indigo-500 rounded-full">
-                      <span className="text-white font-bold">2</span>
-                    </div>
-                  </div>
-                  <div className="mt-4 bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Phase 2: Community Expansion (3–9 Months)</h3>
-                    <p className="text-gray-600">
-                      Scaling to 50+ organizations across multiple sectors and refining based on user feedback.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phase 3 */}
-                <div className="relative">
-                  <div className="flex items-center justify-center">
-                    <div className="z-10 flex items-center justify-center w-12 h-12 bg-indigo-400 rounded-full">
-                      <span className="text-white font-bold">3</span>
-                    </div>
-                  </div>
-                  <div className="mt-4 bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      Phase 3: Ecosystem Integration (9–18 Months)
-                    </h3>
-                    <p className="text-gray-600">
-                      Partnering with nonprofit infrastructure groups and offering an API for integration with existing
-                      nonprofit tech.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* The Invitation */}
+        {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-teal-600 to-blue-600 text-white">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-bold mb-6">The Invitation</h2>
-              <p className="text-xl text-teal-100">We're seeking thought partners who can help shape Proxi's future:</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Join Our Mission</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-white">
-                      Philanthropy Insiders: Foundation officers and trustees who understand the nuances of grantmaking
-                      decisions
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-white">
-                      Community Capital Experts: Leaders who can help us expand into impact investing and community
-                      development finance
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Become a Partner</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-white">
-                      Nonprofit Leaders: Organizations willing to test our platform and provide feedback on real-world
-                      functionality
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-300 mt-0.5" />
-                    <span className="text-white">
-                      Technology Advisors: Specialists in AI/ML who can help us refine our matching algorithms and
-                      intelligence gathering
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="max-w-3xl mx-auto text-center mt-12">
-              <p className="text-lg text-teal-100 mb-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6">Join Us in Our Mission</h2>
+              <p className="text-xl mb-8">
                 When we level the philanthropic playing field through equitable intelligence, everyone wins: community
                 organizations secure sustainable funding, foundations find partners whose work genuinely aligns with
                 their missions, and communities receive more effective, culturally responsive solutions.
               </p>
-              <BetaSignup buttonText="Join Our Mission" />
+              <BetaSignup buttonText="Request Demo Access" />
             </div>
           </div>
         </section>
@@ -602,7 +237,7 @@ export default function AboutPage() {
       <footer className="bg-gray-900 text-white py-8">
         <div className="container">
           <div className="text-center">
-            <p>© 2023 Proxi. All rights reserved.</p>
+            <p>© 2023 Kindora. All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-400">Democratizing access to philanthropic funding through AI.</p>
           </div>
         </div>

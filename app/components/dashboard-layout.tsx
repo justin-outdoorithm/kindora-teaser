@@ -108,30 +108,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
           >
             Home
           </Link>
-          <Link
-            href="/funder-matches"
-            className={`whitespace-nowrap px-3 py-1 mr-3 rounded-full text-sm font-medium ${
-              activeTab === "Matches" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            Matches
-          </Link>
-          <Link
-            href="/saved-funders"
-            className={`whitespace-nowrap px-3 py-1 mr-3 rounded-full text-sm font-medium ${
-              activeTab === "Packages" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            Packages
-          </Link>
-          <Link
-            href="/grant-builder"
-            className={`whitespace-nowrap px-3 py-1 mr-3 rounded-full text-sm font-medium ${
-              activeTab === "Grant Builder" ? "bg-teal-50 text-teal-700" : "text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            Grant Builder
-          </Link>
         </div>
 
         {/* Mobile Menu Drawer */}
@@ -191,14 +167,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                   }`}
                 >
                   Funder Packages
-                </Link>
-                <Link
-                  href="/grant-builder"
-                  className={`flex items-center px-3 py-2 rounded-md font-medium text-sm ${
-                    pathname === "/grant-builder" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  Grant Builder
                 </Link>
                 <div className="text-xs font-semibold text-gray-500 mt-6 mb-2">HELP & SUPPORT</div>
                 <Link
@@ -266,14 +234,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
             >
               Funder Packages
             </Link>
-            <Link
-              href="/grant-builder"
-              className={`flex items-center px-4 py-2 rounded-md font-medium mt-1 ${
-                pathname === "/grant-builder" ? "text-teal-700 bg-teal-50" : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              Grant Builder
-            </Link>
             <div className="mt-auto pt-4 border-t border-gray-200 mx-2 mt-4">
               <LogoutButton />
             </div>
@@ -295,36 +255,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                   }`}
                 >
                   Home
-                </Link>
-                <Link
-                  href="/funder-matches"
-                  className={`pb-3 font-medium ${
-                    activeTab === "Matches"
-                      ? "border-b-2 border-teal-700 text-teal-700"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  Matches
-                </Link>
-                <Link
-                  href="/saved-funders"
-                  className={`pb-3 font-medium ${
-                    activeTab === "Packages"
-                      ? "border-b-2 border-teal-700 text-teal-700"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  Funder Packages
-                </Link>
-                <Link
-                  href="/grant-builder"
-                  className={`pb-3 font-medium ${
-                    activeTab === "Grant Builder"
-                      ? "border-b-2 border-teal-700 text-teal-700"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  Grant Builder
                 </Link>
                 <div className="text-xs px-2 py-1 bg-orange-100 text-orange-600 rounded-full uppercase font-medium">
                   Alpha Preview

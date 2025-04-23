@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
-export function BetaSignup({ buttonText = "Request Demo" }: { buttonText?: string }) {
+export function BetaSignup({ buttonText = "Request Access", className }: { buttonText?: string; className?: string }) {
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
@@ -52,7 +52,10 @@ export function BetaSignup({ buttonText = "Request Demo" }: { buttonText?: strin
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-4 sm:flex-row sm:space-x-3 sm:space-y-0">
+    <form
+      onSubmit={handleSubmit}
+      className={`flex flex-col space-y-4 sm:flex-row sm:space-x-3 sm:space-y-0 ${className}`}
+    >
       <div className="flex-1">
         <input
           type="email"

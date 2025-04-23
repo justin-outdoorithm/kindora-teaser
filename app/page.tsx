@@ -1,11 +1,56 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { SiteHeader } from "@/app/components/site-header"
 import { BetaSignup } from "@/app/components/beta-signup"
 import { Button } from "@/components/ui/button"
-import { Check, Users, Building, Calendar, FileText, Search, Filter, Star, Clock, ArrowRight } from "lucide-react"
+import {
+  Check,
+  Users,
+  Building,
+  Calendar,
+  FileText,
+  Search,
+  Filter,
+  ArrowRight,
+  Download,
+  LinkIcon,
+  Copy,
+  Shield,
+  Clock,
+  Lightbulb,
+} from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export default function LandingPage() {
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false)
+  const [password, setPassword] = useState("")
+  const [passwordError, setPasswordError] = useState(false)
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (password === "AccessCapital$") {
+      setIsPasswordModalOpen(false)
+      setPassword("")
+      setPasswordError(false)
+      window.location.href = "/dashboard"
+    } else {
+      setPasswordError(true)
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -17,7 +62,7 @@ export default function LandingPage() {
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
                 <h1>
-                  <span className="block text-base font-semibold text-orange-500">Project Proxi</span>
+                  <span className="block text-base font-semibold text-orange-500">Kindora</span>
                   <span className="mt-1 block text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
                     <span className="block text-gray-900">Modern</span>
                     <span className="block text-teal-700">Fundraising Tools</span>
@@ -41,7 +86,7 @@ export default function LandingPage() {
                   <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
                     <Image
                       src="/images/dashboard-preview.png"
-                      alt="Proxi Dashboard Preview"
+                      alt="Kindora Dashboard Preview"
                       width={600}
                       height={400}
                       className="w-full"
@@ -56,13 +101,105 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Our Mission Section (from About Us) */}
+        <section className="py-16 bg-gradient-to-r from-teal-50 to-blue-50">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <div className="inline-block bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-teal-700 mb-4">
+                Our Mission
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900">Transforming Philanthropy</h2>
+              <p className="mt-4 text-lg text-gray-600">
+                Kindora creates "equitable intelligence" that serves two critical purposes:
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-teal-700" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Democratizing Access</h3>
+                <p className="text-gray-600">
+                  We bring program officer-level discernment to organizations that have never had it before,
+                  particularly those led by and serving disadvantaged communities. Our platform levels the playing field
+                  in philanthropy.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-teal-700" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Maximizing Efficiency</h3>
+                <p className="text-gray-600">
+                  We automate the time-consuming research and writing processes that burden fundraising professionals.
+                  This frees up human talent to focus on what matters most: building relationships and delivering
+                  impact.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The Challenge Section (from About Us) */}
+        <section className="py-16 bg-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <div className="inline-block bg-orange-100 rounded-full px-3 py-1 text-sm font-semibold text-orange-700 mb-4">
+                The Challenge
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900">The Philanthropic Funding Landscape is Broken</h2>
+              <p className="mt-4 text-lg text-gray-600">
+                Organizations closest to social problems often have the most effective solutions, yet they're the least
+                likely to secure consistent funding.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                  <Search className="h-6 w-6 text-red-700" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Overwhelming and Inefficient</h3>
+                <p className="text-gray-600">
+                  Current grant prospecting tools generate hundreds or thousands of potential matches without meaningful
+                  prioritization. A typical search can return 2,400+ funders—an impossible list to navigate effectively.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-red-700" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Systematically Inequitable</h3>
+                <p className="text-gray-600">
+                  Organizations led by people of color receive less than 4% of philanthropic dollars despite serving
+                  communities with the greatest needs.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
+                  <Lightbulb className="h-6 w-6 text-teal-700" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">The Solution: Kindora</h3>
+                <p className="text-gray-600">
+                  Our AI-powered platform creates equitable intelligence that democratizes access to funding while
+                  maximizing efficiency for all nonprofits.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Platform Features - Consolidated Section */}
         <section className="bg-white py-16">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">Democratizing Access to Funding</h2>
               <p className="mt-4 text-lg text-gray-600">
-                Proxi leverages advanced technology and human-centered design to level the playing field in the social
+                Kindora leverages advanced technology and human-centered design to level the playing field in the social
                 sector, providing equitable intelligence once limited to insiders.
               </p>
             </div>
@@ -93,9 +230,6 @@ export default function LandingPage() {
                     <span className="text-gray-700">Get personalized recommendations for improvement</span>
                   </li>
                 </ul>
-                <Link href="/fundraising-dna">
-                  <Button className="bg-teal-700 hover:bg-teal-800">Explore Your Org Profile</Button>
-                </Link>
               </div>
               <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-md border border-gray-200">
                 {/* Org Profile Screenshot Mockup */}
@@ -312,132 +446,133 @@ export default function LandingPage() {
                     <span className="text-gray-700">Save up to 60% of your fundraising research time</span>
                   </li>
                 </ul>
-                <Link href="/funder-matches">
-                  <Button className="bg-teal-700 hover:bg-teal-800">Discover Your Matches</Button>
-                </Link>
               </div>
             </div>
 
-            {/* Funder Packages Feature */}
+            {/* Personalized Reachouts Feature */}
             <div className="mt-24 grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
                 <div className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mb-4">
-                  Funder Packages
+                  Personalized Reachouts
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Organize and Optimize Your Funding Strategy</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Personalized Reachouts</h3>
                 <p className="text-gray-600 mb-4">
-                  Proxi helps you build strategic funder packages that group potential funders by program area,
-                  timeline, or any criteria that makes sense for your organization. This approach transforms scattered
-                  opportunities into a cohesive funding strategy.
+                  Kindora helps you craft personalized, strategic outreach to funders that speaks directly to their
+                  interests and priorities. Our AI-powered insights help you understand exactly what each funder is
+                  looking for, so you can approach them with confidence.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-700">Create custom funder packages aligned with your programs</span>
+                    <span className="text-gray-700">Understand each funder's unique priorities and interests</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-700">Track application status and deadlines in one place</span>
+                    <span className="text-gray-700">Get customized email templates and meeting guides</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700 mt-0.5" />
-                    <span className="text-gray-700">Collaborate with your team on funding opportunities</span>
+                    <span className="text-gray-700">Increase your success rate with targeted outreach</span>
                   </li>
                 </ul>
-                <Link href="/saved-funders">
-                  <Button className="bg-teal-700 hover:bg-teal-800">Explore Funder Packages</Button>
-                </Link>
               </div>
               <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-md border border-gray-200">
-                {/* Funder Packages Screenshot Mockup */}
+                {/* Funder Package Modal View Screenshot */}
                 <div className="bg-white p-6">
-                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-xl font-bold text-gray-900">Funder Packages</h3>
-                    <button className="px-3 py-1 bg-teal-600 text-white rounded-md text-sm">+ New Package</button>
+                  <div className="border-b border-gray-200 pb-4 mb-4">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">Johnson Family Foundation Funder Package</h3>
+                        <p className="text-sm text-gray-600 mt-1">
+                          Generated on Mar 28, 2023 • Last updated Apr 30, 2023
+                        </p>
+                      </div>
+                      <div className="flex space-x-2">
+                        <button className="p-2 rounded-md bg-gray-100 hover:bg-gray-200">
+                          <Download className="h-4 w-4 text-gray-600" />
+                        </button>
+                        <button className="p-2 rounded-md bg-gray-100 hover:bg-gray-200">
+                          <LinkIcon className="h-4 w-4 text-gray-600" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="space-y-4">
-                    {/* Package 1 */}
-                    <div className="border border-gray-200 rounded-lg p-4 hover:border-teal-500 transition-colors">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h5 className="font-bold text-gray-900">Youth Education Initiative</h5>
-                          <p className="text-sm text-gray-600 mt-1">5 funders • $250K potential</p>
-                        </div>
-                        <div className="flex space-x-1">
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-gray-300" />
+                  <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 mb-4">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-lg font-bold text-teal-800">VERDICT: GOOD ALIGNMENT</h3>
+                        <p className="text-sm text-gray-700 mt-1">
+                          The Johnson Family Foundation would view our organization as well-aligned with their Arts &
+                          Culture program, particularly their focus on arts education and community engagement. Our work
+                          connecting diverse communities with cultural experiences matches their priorities.
+                        </p>
+                      </div>
+                      <button className="flex items-center text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200">
+                        <Copy className="h-3 w-3 mr-1" />
+                        Copy
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="font-bold text-gray-900">KEY STATS</h3>
+                      <button className="flex items-center text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200">
+                        <Copy className="h-3 w-3 mr-1" />
+                        Copy
+                      </button>
+                    </div>
+                    <div className="grid grid-cols-2 gap-y-3">
+                      <div className="flex items-start">
+                        <div className="h-1.5 w-1.5 rounded-full bg-teal-700 mt-2 mr-2"></div>
+                        <div className="text-sm">
+                          <span className="font-medium">Annual Giving:</span> $900K (2023)
                         </div>
                       </div>
-                      <div className="mt-3 flex items-center text-sm text-gray-500">
-                        <Clock className="h-4 w-4 mr-1" />
-                        <span>Next deadline: Aug 15, 2023</span>
-                        <span className="mx-2">•</span>
-                        <span className="text-green-600 font-medium">2 applications in progress</span>
+                      <div className="flex items-start">
+                        <div className="h-1.5 w-1.5 rounded-full bg-teal-700 mt-2 mr-2"></div>
+                        <div className="text-sm">
+                          <span className="font-medium">Typical Grant Range:</span> $15K-$40K
+                        </div>
                       </div>
-                      <div className="mt-3 flex space-x-2">
-                        <span className="px-2 py-1 bg-teal-100 text-teal-800 rounded-md text-xs">Education</span>
-                        <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-md text-xs">Youth</span>
-                        <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-md text-xs">Q3 2023</span>
+                      <div className="flex items-start">
+                        <div className="h-1.5 w-1.5 rounded-full bg-teal-700 mt-2 mr-2"></div>
+                        <div className="text-sm">
+                          <span className="font-medium">Process:</span> Quarterly deadlines
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="h-1.5 w-1.5 rounded-full bg-teal-700 mt-2 mr-2"></div>
+                        <div className="text-sm">
+                          <span className="font-medium">Recommended Ask:</span> $45K over 2 years
+                        </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Package 2 */}
-                    <div className="border border-gray-200 rounded-lg p-4 hover:border-teal-500 transition-colors">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h5 className="font-bold text-gray-900">Community Outreach Program</h5>
-                          <p className="text-sm text-gray-600 mt-1">3 funders • $175K potential</p>
-                        </div>
-                        <div className="flex space-x-1">
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-gray-300" />
-                          <Star className="h-4 w-4 text-gray-300" />
-                        </div>
-                      </div>
-                      <div className="mt-3 flex items-center text-sm text-gray-500">
-                        <Clock className="h-4 w-4 mr-1" />
-                        <span>Next deadline: Sep 30, 2023</span>
-                        <span className="mx-2">•</span>
-                        <span className="text-blue-600 font-medium">1 LOI submitted</span>
-                      </div>
-                      <div className="mt-3 flex space-x-2">
-                        <span className="px-2 py-1 bg-green-100 text-green-800 rounded-md text-xs">Community</span>
-                        <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-md text-xs">Outreach</span>
-                        <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-md text-xs">Q4 2023</span>
-                      </div>
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="font-bold text-gray-900">STRONGEST ALIGNMENT POINTS</h3>
+                      <button className="flex items-center text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200">
+                        <Copy className="h-3 w-3 mr-1" />
+                        Copy
+                      </button>
                     </div>
-
-                    {/* Package 3 */}
-                    <div className="border border-gray-200 rounded-lg p-4 hover:border-teal-500 transition-colors">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h5 className="font-bold text-gray-900">Technology Innovation Fund</h5>
-                          <p className="text-sm text-gray-600 mt-1">4 funders • $300K potential</p>
-                        </div>
-                        <div className="flex space-x-1">
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
-                          <Star className="h-4 w-4 text-yellow-400" />
+                    <div className="space-y-2">
+                      <div className="flex items-start">
+                        <div className="h-1.5 w-1.5 rounded-full bg-green-600 mt-2 mr-2"></div>
+                        <div className="text-sm">
+                          <span className="font-medium">Arts Education Focus:</span> Their commitment to arts education
+                          programs that reach diverse audiences aligns with our mission
                         </div>
                       </div>
-                      <div className="mt-3 flex items-center text-sm text-gray-500">
-                        <Clock className="h-4 w-4 mr-1" />
-                        <span>Next deadline: Nov 15, 2023</span>
-                        <span className="mx-2">•</span>
-                        <span className="text-orange-600 font-medium">Planning phase</span>
-                      </div>
-                      <div className="mt-3 flex space-x-2">
-                        <span className="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-md text-xs">Technology</span>
-                        <span className="px-2 py-1 bg-red-100 text-red-800 rounded-md text-xs">Innovation</span>
-                        <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-md text-xs">Q1 2024</span>
+                      <div className="flex items-start">
+                        <div className="h-1.5 w-1.5 rounded-full bg-green-600 mt-2 mr-2"></div>
+                        <div className="text-sm">
+                          <span className="font-medium">Community Engagement:</span> They value programs that build
+                          community connections through arts and cultural activities
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -453,7 +588,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">Ready to try the platform?</h2>
               <p className="mt-3 text-lg text-gray-600">
-                Get access to our demo and see how Proxi can transform your fundraising process.
+                Get access to our demo and see how Kindora can transform your fundraising process.
               </p>
               <div className="mt-8 flex justify-center">
                 <BetaSignup buttonText="Request Demo Access" />
@@ -469,11 +604,44 @@ export default function LandingPage() {
       <footer className="bg-white py-8 border-t border-gray-200">
         <div className="container">
           <div className="text-center">
-            <p className="text-gray-600">© 2023 Proxi. All rights reserved.</p>
+            <p className="text-gray-600">© 2023 Kindora. All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-500">This is a demo version for client feedback purposes.</p>
           </div>
         </div>
       </footer>
+
+      {/* Password Modal */}
+      <Dialog open={isPasswordModalOpen} onOpenChange={setIsPasswordModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Enter Password</DialogTitle>
+            <DialogDescription>
+              This feature is password protected. Please enter the password to continue.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handlePasswordSubmit}>
+            <div className="grid gap-4 py-4">
+              <div className="grid gap-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={passwordError ? "border-red-500" : ""}
+                />
+                {passwordError && <p className="text-sm text-red-500">Incorrect password. Please try again.</p>}
+              </div>
+            </div>
+            <DialogFooter>
+              <Button type="button" variant="outline" onClick={() => setIsPasswordModalOpen(false)}>
+                Cancel
+              </Button>
+              <Button type="submit">Continue</Button>
+            </DialogFooter>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

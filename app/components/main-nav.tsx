@@ -28,6 +28,15 @@ export function MainNav() {
           Home
         </Link>
         <Link
+          href="/about"
+          className={cn(
+            "font-medium text-gray-600 hover:text-gray-900",
+            pathname === "/about" && "border-b-2 border-teal-700 text-teal-700",
+          )}
+        >
+          About Us
+        </Link>
+        <Link
           href="/pricing"
           className={cn(
             "font-medium text-gray-600 hover:text-gray-900",
@@ -36,7 +45,6 @@ export function MainNav() {
         >
           Pricing
         </Link>
-      
       </div>
     </nav>
   )

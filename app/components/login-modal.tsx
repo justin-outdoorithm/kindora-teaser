@@ -27,7 +27,7 @@ export function LoginModal() {
     e.preventDefault()
 
     // Check against the hard-coded password
-    if (password === "easyfundraising") {
+    if (password === "Capital4Everyone$") {
       // Store in session storage that user is authenticated
       sessionStorage.setItem("demo-authenticated", "true")
       router.push("/dashboard")
@@ -80,7 +80,7 @@ export function LoginModal() {
                     </button>
                   </div>
                   {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
-                  <p className="mt-2 text-xs text-gray-500">Hint: The password is "easyfundraising"</p>
+                  <p className="mt-2 text-xs text-gray-500">Let's get you in!</p>
                 </div>
 
                 <Button type="submit" className="w-full bg-teal-700 hover:bg-teal-800">

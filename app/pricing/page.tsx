@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Check } from "lucide-react"
+import { Check, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SiteHeader } from "@/app/components/site-header"
 import { BetaSignupModal } from "@/app/components/beta-signup-modal"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default function PricingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -29,24 +30,42 @@ export default function PricingPage() {
               </p>
             </div>
 
-            {/* Pricing Tiers - Updated with all 4 tiers */}
+            {/* Pricing Tiers */}
             <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:max-w-6xl lg:mx-auto">
               {/* Community Plan */}
               <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900">Community</h3>
                 <p className="mt-2 text-sm text-gray-500">For small organizations with limited grant-seeking needs</p>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold tracking-tight text-gray-900">$69</span>
+                  <span className="text-3xl font-bold tracking-tight text-gray-900">$99</span>
                   <span className="ml-1 text-xl text-gray-500">/month</span>
+                </div>
+                <div className="mt-2 flex items-center">
+                  <span className="text-sm font-medium text-teal-700">2 funder packages/month</span>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-4 w-4 ml-1 text-gray-400" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="max-w-xs text-sm">Unused packages roll forward 60 days and then expire</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <div className="mt-6 bg-gray-50 p-4 rounded-md text-sm text-gray-600 italic">
+                  "Just getting started? We'll quietly surface two high-potential funders each month so you can focus on
+                  relationships instead of spreadsheets. A gentle nudge forward—nothing overwhelming, always
+                  affordable."
                 </div>
                 <ul className="mt-6 space-y-4">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">3 funder packages per month</span>
+                    <span className="text-sm text-gray-700">AI-powered funder matching</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Basic organization profile</span>
+                    <span className="text-sm text-gray-700">Organization profile</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
@@ -68,25 +87,34 @@ export default function PricingPage() {
                   For organizations actively pursuing multiple funding sources
                 </p>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold tracking-tight text-gray-900">$189</span>
+                  <span className="text-3xl font-bold tracking-tight text-gray-900">$279</span>
                   <span className="ml-1 text-xl text-gray-500">/month</span>
+                </div>
+                <div className="mt-2 flex items-center">
+                  <span className="text-sm font-medium text-teal-700">6 funder packages/month</span>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-4 w-4 ml-1 text-gray-400" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="max-w-xs text-sm">Unused packages roll forward 60 days and then expire</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <div className="mt-6 bg-gray-50 p-4 rounded-md text-sm text-gray-600 italic">
+                  "Ready for a steadier rhythm? Six tailor-made matches every month keep your pipeline humming while you
+                  stay in control of your calendar and cash flow."
                 </div>
                 <ul className="mt-6 space-y-4">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">10 funder packages per month</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Enhanced organization profile</span>
+                    <span className="text-sm text-gray-700">All Community features</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
                     <span className="text-sm text-gray-700">Priority email support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">AI writing assistance (basic)</span>
                   </li>
                 </ul>
                 <Button
@@ -105,29 +133,34 @@ export default function PricingPage() {
                 <h3 className="text-lg font-bold text-gray-900">Professional</h3>
                 <p className="mt-2 text-sm text-gray-500">For organizations with dedicated development staff</p>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold tracking-tight text-gray-900">$399</span>
+                  <span className="text-3xl font-bold tracking-tight text-gray-900">$549</span>
                   <span className="ml-1 text-xl text-gray-500">/month</span>
+                </div>
+                <div className="mt-2 flex items-center">
+                  <span className="text-sm font-medium text-teal-700">12 funder packages/month</span>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-4 w-4 ml-1 text-gray-400" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="max-w-xs text-sm">Unused packages roll forward 60 days and then expire</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <div className="mt-6 bg-gray-50 p-4 rounded-md text-sm text-gray-600 italic">
+                  "Fundraising is your craft. Twelve insight-rich matches monthly mean fresh opportunities almost every
+                  week—plenty to power a dedicated development pro or consultant without sacrificing depth."
                 </div>
                 <ul className="mt-6 space-y-4">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">25 funder packages per month</span>
+                    <span className="text-sm text-gray-700">All Essential features</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Premium organization profile</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">CRM integrations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">AI grant application builder (10/mo)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Quarterly strategy call (30 min)</span>
+                    <span className="text-sm text-gray-700">Premium support</span>
                   </li>
                 </ul>
                 <Button
@@ -143,29 +176,39 @@ export default function PricingPage() {
                 <h3 className="text-lg font-bold text-gray-900">Enterprise</h3>
                 <p className="mt-2 text-sm text-gray-500">For large organizations and consultancies</p>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold tracking-tight text-gray-900">$1,199</span>
+                  <span className="text-3xl font-bold tracking-tight text-gray-900">$999</span>
                   <span className="ml-1 text-xl text-gray-500">/month</span>
+                </div>
+                <div className="mt-2 flex items-center">
+                  <span className="text-sm font-medium text-teal-700">25 funder packages/month</span>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-4 w-4 ml-1 text-gray-400" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="max-w-xs text-sm">Unused packages roll forward 60 days and then expire</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <div className="mt-6 bg-gray-50 p-4 rounded-md text-sm text-gray-600 italic">
+                  "Running multiple programs or clients? Twenty-five best-fit funders each month—curated, prioritized,
+                  and delivered straight into your CRM by our team—so your whole organization can move faster,
+                  together."
                 </div>
                 <ul className="mt-6 space-y-4">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">50 funder packages per month</span>
+                    <span className="text-sm text-gray-700">All Professional features</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Premium organization profile</span>
+                    <span className="text-sm text-gray-700">CRM integrations</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Complimentary consulting (3 hrs/quarter)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Premium support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
-                    <span className="text-sm text-gray-700">Unlimited AI grant applications</span>
+                    <span className="text-sm text-gray-700">Quarterly strategy calls (3 hrs/quarter)</span>
                   </li>
                 </ul>
                 <Button
@@ -185,13 +228,16 @@ export default function PricingPage() {
                   <p className="mt-2 text-gray-600">One-time fee required to get started</p>
                 </div>
                 <div className="mt-4 md:mt-0">
-                  <span className="text-3xl font-bold text-gray-900">$300</span>
+                  <span className="text-3xl font-bold text-gray-900">$299</span>
                   <span className="text-gray-500 ml-1">one-time</span>
                 </div>
               </div>
               <div className="mt-6">
-                <p className="text-gray-700">This initial setup includes:</p>
-                <ul className="mt-3 space-y-2">
+                <p className="text-gray-700 italic">
+                  "We invest heavy compute up-front to build an AI profile that truly understands your mission. This
+                  one-time fee covers that lift and ensures you see meaningful matches from day one."
+                </p>
+                <ul className="mt-6 space-y-2">
                   <li className="flex items-start">
                     <Check className="mr-2 h-5 w-5 flex-shrink-0 text-teal-700" />
                     <span className="text-gray-600">Organization profile creation using our AI system</span>
@@ -210,6 +256,33 @@ export default function PricingPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+
+            {/* Add-Ons */}
+            <div className="mt-16 mx-auto max-w-3xl bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">The Only Add-On</h3>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between bg-gray-50 p-4 rounded-lg">
+                <div>
+                  <h4 className="font-bold text-gray-900">Extra Funder Package</h4>
+                  <p className="text-gray-600 mt-1">Need an additional funder package this month?</p>
+                </div>
+                <div className="mt-4 md:mt-0 md:ml-4">
+                  <span className="text-2xl font-bold text-gray-900">$60</span>
+                  <span className="text-gray-500 ml-1">each</span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-gray-600 italic">
+                At this price, buying more than a few is costlier than moving up a tier—so every org lands in the plan
+                that truly fits its journey.
+              </p>
+            </div>
+
+            {/* Simple Pricing Message */}
+            <div className="mt-16 mx-auto max-w-3xl text-center">
+              <p className="text-lg text-gray-600 italic">
+                Kindora pricing stays simple, warm, and fair—all about giving you the right funder intelligence at the
+                right moment, without hidden hoops or surprise costs.
+              </p>
             </div>
 
             {/* FAQ Section - Simple Version */}
@@ -235,6 +308,13 @@ export default function PricingPage() {
                   <p className="mt-2 text-gray-600">
                     Each funder package includes detailed information about a potential funder, including funding
                     priorities, application requirements, past grantees, and customized outreach materials.
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gray-200 p-4">
+                  <h3 className="text-lg font-medium text-gray-900">What happens to unused funder packages?</h3>
+                  <p className="mt-2 text-gray-600">
+                    Unused funder packages roll forward for 60 days and then expire. This gives you flexibility while
+                    ensuring you receive the most current and relevant funder matches.
                   </p>
                 </div>
               </div>
