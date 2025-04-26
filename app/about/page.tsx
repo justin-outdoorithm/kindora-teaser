@@ -55,10 +55,10 @@ export default function AboutPage() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2023%2C%202025%2C%2001_56_40%20AM-0ILy94rfdpAPCp3BFF6o8S62qhybNr.png"
-                  alt="Transforming philanthropy through equity and community empowerment"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2025%2C%202025%2C%2009_07_43%20PM-QDZfaj5farglIP395WADxqYwHMkqOj.png"
+                  alt="Team collaborating on nonprofit funding strategies - identifying barriers and opportunities"
                   width={800}
-                  height={800}
+                  height={600}
                   className="w-full h-auto"
                 />
               </div>

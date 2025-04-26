@@ -149,13 +149,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                     <div className="text-xs text-gray-500">Future Impact Foundation</div>
                   </div>
                 </div>
-                <div className="text-xs text-gray-500 flex justify-between">
-                  <span>Profile Completion</span>
-                  <span>75%</span>
-                </div>
-                <div className="h-1 w-full bg-gray-200 rounded-full mt-1">
-                  <div className="h-1 bg-teal-700 rounded-full" style={{ width: "75%" }}></div>
-                </div>
               </div>
 
               <nav className="p-4">
@@ -247,7 +240,6 @@ export function DashboardLayout({ children, activeTab = "Home" }: DashboardLayou
                 </div>
               </div>
               <div className="flex items-center space-x-6">
-                <div className="text-sm font-medium">75% Complete</div>
                 <button className="rounded-full p-1 hover:bg-gray-100">
                   <Search className="h-5 w-5" />
                 </button>
