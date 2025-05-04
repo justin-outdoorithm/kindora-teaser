@@ -4,7 +4,9 @@ import type React from "react"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Check, X } from "lucide-react"
+import { Check, Loader2, X } from "lucide-react"
+import { submitEmail } from "../actions/submit-email"
+import { useFormState, useFormStatus } from "react-dom"
 
 interface BetaSignupModalProps {
   isOpen: boolean
@@ -12,35 +14,55 @@ interface BetaSignupModalProps {
   planName: string
 }
 
+const initialState = {
+  success: false,
+  message: "",
+  email: "",
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus()
+
+  return (
+    <Button type="submit" className="bg-teal-700 hover:bg-teal-800" disabled={pending}>
+      {pending ? (
+        <>
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          Submitting...
+        </>
+      ) : (
+        "Request Access"
+      )}
+    </Button>
+  )
+}
+
 export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalProps) {
   const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [error, setError] = useState("")
+  const [clientError, setClientError] = useState("")
   const [organization, setOrganization] = useState("")
   const [role, setRole] = useState("")
+  const [state, formAction] = useFormState(submitEmail, initialState)
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return re.test(email)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setClientError("")
 
     if (!email) {
-      setError("Please enter your email address")
+      e.preventDefault()
+      setClientError("Please enter your email address")
       return
     }
 
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address")
+      e.preventDefault()
+      setClientError("Please enter a valid email address")
       return
     }
-
-    // In a real app, you would send this to your backend
-    console.log("Demo request submitted:", { email, organization, role, plan: planName })
-    setIsSubmitted(true)
   }
 
   const handleClose = () => {
@@ -50,8 +72,7 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
       setEmail("")
       setOrganization("")
       setRole("")
-      setIsSubmitted(false)
-      setError("")
+      setClientError("")
     }, 300)
   }
 
@@ -68,19 +89,20 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
           <X className="h-5 w-5" />
         </button>
 
-        {isSubmitted ? (
+        {state.success ? (
           <div className="text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
               <Check className="h-8 w-8 text-teal-700" />
             </div>
             <h3 className="mb-2 text-xl font-bold text-gray-900">Thank you for your interest</h3>
             <p className="mb-4 text-gray-600">
-              We've received your demo request for {planName && <span className="font-medium">{planName}</span>}.
+              {state.message ||
+                `We've received your demo request for ${planName && <span className="font-medium">{planName}</span>}.`}
             </p>
             <div className="mb-6 rounded-lg bg-gray-50 p-4 text-left">
               <h4 className="mb-2 font-medium text-gray-800">What happens next:</h4>
               <ol className="list-decimal pl-5 text-sm text-gray-600">
-                <li className="mb-1">We'll review your request and contact you at {email}</li>
+                <li className="mb-1">We'll review your request and contact you at {state.email || email}</li>
                 <li className="mb-1">You'll receive demo credentials within 1 business day</li>
                 <li className="mb-1">Our team will schedule an optional walkthrough call</li>
                 <li>Your feedback will help us improve the platform</li>
@@ -100,7 +122,10 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
               </p>
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form action={formAction} onSubmit={handleSubmit}>
+              <input type="hidden" name="source" value="pricing_modal" />
+              <input type="hidden" name="planName" value={planName} />
+
               <div className="mb-4">
                 <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">
                   Email address*
@@ -108,13 +133,15 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@organization.org"
                   className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-teal-700 focus:outline-none focus:ring-1 focus:ring-teal-700"
                   required
                 />
-                {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+                {clientError && <p className="mt-1 text-sm text-red-600">{clientError}</p>}
+                {state.message && !state.success && <p className="mt-1 text-sm text-red-600">{state.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -124,6 +151,7 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
                 <input
                   type="text"
                   id="organization"
+                  name="organization"
                   value={organization}
                   onChange={(e) => setOrganization(e.target.value)}
                   placeholder="Your nonprofit organization"
@@ -138,6 +166,7 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
                 <input
                   type="text"
                   id="role"
+                  name="role"
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
                   placeholder="e.g., Development Director"
@@ -154,9 +183,7 @@ export function BetaSignupModal({ isOpen, onClose, planName }: BetaSignupModalPr
                 >
                   Cancel
                 </Button>
-                <Button type="submit" className="bg-teal-700 hover:bg-teal-800">
-                  Request Access
-                </Button>
+                <SubmitButton />
               </div>
             </form>
           </>
